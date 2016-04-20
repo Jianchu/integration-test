@@ -21,7 +21,9 @@ cd generic-type-inference-solver
 export TRAVIS_BUILD_DIR=`pwd`
 ./.travis-build-without-test.sh
 echo "test path"
-echo "$JSR308"
+echo "$TRAVIS_BUILD_DIR"
+ls
+ls $TRAVIS_BUILD_DIR
 rm -rf $CORPUS_DIR/annotated/
 #infer all examples in corpus
 for f in $CORPUS_DIR/*
