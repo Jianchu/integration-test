@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROOT=$TRAVIS_BUILD_DIR/..
+ROOT=$TRAVIS_BUILD_DIR/type_inference
 export JSR308=$ROOT
 CORPUS_DIR=../../corpus
 SCRIPT=$(readlink -f $0)
