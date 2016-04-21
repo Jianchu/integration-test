@@ -3,6 +3,8 @@
 ROOT=$TRAVIS_BUILD_DIR/type_inference
 export JSR308=$ROOT
 export CLASSPATH=${CLASSPATH}:$JSR308/generic-type-inference-solver/bin
+export AFU=$JSR308/annotation-tools/annotation-file-utilities
+export PATH=${PATH}:$AFU
 CORPUS_DIR=../../corpus
 SCRIPT=$(readlink -f $0)
 MYDIRPATH=`dirname $SCRIPT`
