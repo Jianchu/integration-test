@@ -24,10 +24,10 @@ cd generic-type-inference-solver
 export TRAVIS_BUILD_DIR=`pwd`
 ./.travis-build-without-test.sh
 echo "test path"
-echo "$TRAVIS_BUILD_DIR"
 echo "$JSR308"
-ls
-ls $TRAVIS_BUILD_DIR
+echo "begin"
+java -classpath /home/travis/build/Jianchu/integration-test/corpus/Sort01/classes:/home/travis/build/Jianchu/integration-test/type_inference/checker-framework-inference/dist/checker.jar:/home/travis/build/Jianchu/integration-test/type_inference/checker-framework-inference/dist/plume.jar:/home/travis/build/Jianchu/integration-test/type_inference/checker-framework-inference/dist/checker-framework-inference.jar checkers.inference.InferenceLauncher --solverArgs backEndType=maxsatbackend.MaxSat --checker ontology.OntologyChecker --solver constraintsolver.ConstraintSolver --mode ROUNDTRIP --hacks=true --targetclasspath /home/travis/build/Jianchu/integration-test/corpus/Sort01/classes -afud ../../corpus/annotated /home/travis/build/Jianchu/integration-test/corpus/Sort01/src/Sort01.java
+echo "end"
 ls $JSR308
 rm -rf $CORPUS_DIR/annotated/
 #infer all examples in corpus
