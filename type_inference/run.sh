@@ -1,4 +1,7 @@
 #!/bin/bash
+
+ROOT=$TRAVIS_BUILD_DIR/..
+export JSR308=$ROOT
 CORPUS_DIR=../../corpus
 SCRIPT=$(readlink -f $0)
 MYDIRPATH=`dirname $SCRIPT`
