@@ -4,7 +4,7 @@ ROOT=$TRAVIS_BUILD_DIR/type_inference
 export JSR308=$ROOT
 export CLASSPATH=${CLASSPATH}:$JSR308/generic-type-inference-solver/bin
 export AFU=$JSR308/annotation-tools/annotation-file-utilities
-export PATH=${PATH}:$AFU
+export PATH=${PATH}:$AFU/scripts
 CORPUS_DIR=../../corpus
 SCRIPT=$(readlink -f $0)
 MYDIRPATH=`dirname $SCRIPT`
@@ -31,7 +31,7 @@ echo "$JSR308"
 echo "begin"
 java -classpath /home/travis/build/Jianchu/integration-test/corpus/Sort01/classes:/home/travis/build/Jianchu/integration-test/type_inference/checker-framework-inference/dist/checker.jar:/home/travis/build/Jianchu/integration-test/type_inference/checker-framework-inference/dist/plume.jar:/home/travis/build/Jianchu/integration-test/type_inference/checker-framework-inference/dist/checker-framework-inference.jar checkers.inference.InferenceLauncher --solverArgs backEndType=maxsatbackend.MaxSat --checker ontology.OntologyChecker --solver constraintsolver.ConstraintSolver --mode ROUNDTRIP --hacks=true --targetclasspath /home/travis/build/Jianchu/integration-test/corpus/Sort01/classes -afud ../../corpus/annotated /home/travis/build/Jianchu/integration-test/corpus/Sort01/src/Sort01.java
 echo "end"
-ls $JSR308/generic-type-inference-solver/bin
+ls $$AFU/scripts
 rm -rf $CORPUS_DIR/annotated/
 #infer all examples in corpus
 for f in $CORPUS_DIR/*
