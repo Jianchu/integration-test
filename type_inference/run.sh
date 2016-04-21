@@ -25,8 +25,10 @@ export TRAVIS_BUILD_DIR=`pwd`
 ./.travis-build-without-test.sh
 echo "test path"
 echo "$TRAVIS_BUILD_DIR"
+echo "$JSR308"
 ls
 ls $TRAVIS_BUILD_DIR
+ls $JSR308
 rm -rf $CORPUS_DIR/annotated/
 #infer all examples in corpus
 for f in $CORPUS_DIR/*
