@@ -6,9 +6,9 @@ export CLASSPATH=${CLASSPATH}:$JSR308/generic-type-inference-solver/bin
 export AFU=$JSR308/annotation-tools/annotation-file-utilities
 export PATH=${PATH}:$AFU/scripts
 CORPUS_DIR=../../corpus
-SCRIPT=$(readlink -f $0)
-MYDIRPATH=`dirname $SCRIPT`
-DLJC=$MYDIRPATH/do-like-javac
+DLJC=$JSR308/do-like-javac
+#SCRIPT=$(readlink -f $0)
+#MYDIRPATH=`dirname $SCRIPT`
 
 if [ -d "generic-type-inference-solver" ]; then
   (cd generic-type-inference-solver && git pull)
