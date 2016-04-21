@@ -1,14 +1,13 @@
 #!/bin/bash
 
-ROOT=$TRAVIS_BUILD_DIR/type_inference
+ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export JSR308=$ROOT
+echo $JSR308
 export CLASSPATH=${CLASSPATH}:$JSR308/generic-type-inference-solver/bin
 export AFU=$JSR308/annotation-tools/annotation-file-utilities
 export PATH=${PATH}:$AFU/scripts
 CORPUS_DIR=../../corpus
 DLJC=$JSR308/do-like-javac
-#SCRIPT=$(readlink -f $0)
-#MYDIRPATH=`dirname $SCRIPT`
 
 if [ -d "generic-type-inference-solver" ]; then
   (cd generic-type-inference-solver && git pull)
