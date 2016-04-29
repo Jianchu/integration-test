@@ -12,7 +12,7 @@ DLJC=$JSR308/do-like-javac
 if [ -d "generic-type-inference-solver" ]; then
   (cd generic-type-inference-solver && git pull)
 else
-  git clone https://github.com/Jianchu/generic-type-inference-solver.git
+  git clone https://github.com/pascaliUWat/generic-type-inference-solver.git
 fi
 
 if [ -d "do-like-javac" ]; then
@@ -26,6 +26,9 @@ cd generic-type-inference-solver
 export TRAVIS_BUILD_DIR=`pwd`
 
 ./.travis-build-without-test.sh
+
+#TODO: generate sequence annotations and adapt OntologyUtils
+#recompile generic-type-inference-solver
 
 rm -rf $CORPUS_DIR/annotated/
 #infer all examples in corpus
@@ -41,4 +44,3 @@ done
 
 # Sort03 causes checker framework inference crushing,
 # the problem has been filed as Issue #24 in checker framework inference.
-cd ..
