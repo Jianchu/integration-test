@@ -38,7 +38,7 @@ do
     cd $f
     ant clean
     echo "Inferring ${PWD##*/}:"
-    python $DLJC/dljc -t inference --solverArgs="backEndType=maxsatbackend.MaxSat" --checker ontology.OntologyChecker --solver constraintsolver.ConstraintSolver -o logs -m ROUNDTRIP -afud $CORPUS_DIR/annotated -- ant
+    python $DLJC/dljc -t inference --checker ontology.OntologyChecker --solver ontology.solver.OntologySolver -o logs -m ROUNDTRIP -afud $CORPUS_DIR/annotated -- ant
   fi
 done
 
